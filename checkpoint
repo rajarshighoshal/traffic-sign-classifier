@@ -1,0 +1,2 @@
+model_checkpoint_path: "trafficsignclassifier"
+all_model_checkpoint_paths: "trafficsignclassifier"
