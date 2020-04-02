@@ -5,8 +5,8 @@
 [//]: # (Image References)
 
 [image1]: ./writeup_imgs/graph.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image2]: ./writeup_imgs/y_channel.png "Y channel extraction"
+[image3]: ./writeup_imgs/augmentation.png "Augmentation"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -48,30 +48,32 @@ Most common signs:
 * `Keep right` train samples: 1860
 
 Most rare signs:
-* `Speed limit (20km/h)` train samples: 180
-* `Dangerous curve to the left` train samples: 180
-* `Go straight or left` train samples: 180
-* `Pedestrians` train samples: 210
-* `End of all speed and passing limits` train samples: 210
+* `End of no passing` train sample: 210
+* `End of no passing by vehicles over 3.5 metric tons` train sample: 210
+* `End of all speed and passing limits` train sample: 210
+* `Pedestrians` train sample: 210
+* `Go straight or left` train sample: 180
+* `Dangerous curve to the left` train sample: 180
+* `Speed limit (20km/h)` train sample: 180
 
 
-### Design and Test a Model Architecture
+Design and Test a Model Architecture
+---
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+#### 1. Data Preprocessing
 
-As a first step, I decided to convert the images to grayscale because ...
+Following the published [baseline model](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) on this problem I applied similar normalization and image enhancements. I have applied Gaussian Blur on the images to enhance sharpness. Then converted the images from RGB-space to YUV-space and extracted only the Y channel as using full YUV color space wasn't giving better results.
 
-Here is an example of a traffic sign image before and after grayscaling.
-
+Here is some example of original vs transformed images:
 ![alt text][image2]
 
-As a last step, I normalized the image data because ...
+I decided to generate additional data using image augmentation because there wasn't much vartiety in the training images.
 
-I decided to generate additional data because ... 
+To add more data to the the data set, I used:-
+* `Random rotation` of the images because it would help detect siogns even if the signs are rotated by some natural causes. 
+* Apart from that I have also applied `random sacling` so that scaling doesn't have much effect on the effectiveness of the model.
 
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
+Here is some example of original vs augmented images:
 
 ![alt text][image3]
 
