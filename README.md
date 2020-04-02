@@ -7,11 +7,12 @@
 [image1]: ./writeup_imgs/graph.png "Visualization"
 [image2]: ./writeup_imgs/y_channel.png "Y channel extraction"
 [image3]: ./writeup_imgs/augmentation.png "Augmentation"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image4]: ./external_imgs/tr1.png "Traffic Sign 1"
+[image5]: ./external_imgs/tr2.png "Traffic Sign 2"
+[image6]: ./external_imgs/tr3.png "Traffic Sign 3"
+[image7]: ./external_imgs/tr4.png "Traffic Sign 4"
+[image8]: ./external_imgs/tr5.png "Traffic Sign 5"
+[image9]: ./external_imgs/tr6.png "Traffic Sign 6"
 
 Overview
 ---
@@ -34,7 +35,7 @@ signs data set:
 
 #### 2. Exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data is diustributed across different classes of traffic signs
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data is diustributed across different classes of traffic signs:
 
 ![alt text][image1]
 
@@ -77,25 +78,32 @@ Here is some example of original vs augmented images:
 
 ![alt text][image3]
 
-The difference between the original data set and the augmented data set is the following ... 
 
-
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Final model architecture 
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
+| Layer                 |     Description                               | 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Input                 | 32x32x1 Y channel image (from YVU space)      | 
+| Convolution 3x3       | 1x1 stride, same padding, outputs 30x30x6     |
+| RELU                  |                                               |
+| Max pooling           | 2x2 stride,  outputs 15x15x6                  |
+| Convolution 3x3       | 1x1 stride, same padding, outputs 13x13x16    |
+| RELU                  |                                               |
+| Max pooling           | 2x2 stride,  outputs 6x6x16                   |
+| Convolution 3x3       | 1x1 stride, same padding, outputs 4x4x64      |
+| RELU                  |                                               |
+| Max pooling           | 2x2 stride,  outputs 2x2x64                   |
+| Flattening            | Input 2x2x64, outputs 256                     |                        
+| Fully Connected       | Input 256, outputs 128                        |
+| RELU                  |                                               |
+| Dropout               | Dropout with 50% probability of dropping out  |                                              
+| Fully Connected       | Input 128, outputs 84                         | 
+| RELU                  |                                               |
+| Dropout               | Dropout with 50% probability of dropping out  |
+| Fully Connected       | Input 84, outputs 43                          | 
+| Softmax               |                                               |
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
@@ -126,10 +134,10 @@ If a well known architecture was chosen:
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-Here are five German traffic signs that I found on the web:
+Here are six German traffic signs that I found on the web:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image7] ![alt text][image8] ![alt text][image8]
 
 The first image might be difficult to classify because ...
 
