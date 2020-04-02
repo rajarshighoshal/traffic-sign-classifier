@@ -160,42 +160,42 @@ The model was able to correctly guess 6 of the 6 traffic signs, which gives an a
 #### 3. Model confidence for the new images
 
 The softmax probabilities for the top 5 classes for image is given below:
-* Top 5 Labels for image 'Speed limit (30km/h)':
-     - 'Speed limit (30km/h)' with prob = 1.00 
-     - 'Speed limit (50km/h)' with prob = 0.00 
-     - 'Speed limit (70km/h)' with prob = 0.00 
-     - 'Speed limit (20km/h)' with prob = 0.00 
-     - 'Speed limit (80km/h)' with prob = 0.00 
-* Top 5 Labels for image 'Roundabout mandatory':
-     - 'Roundabout mandatory' with prob = 0.95 
-     - 'No entry' with prob = 0.04 
-     - 'Keep right' with prob = 0.00 
-     - 'Turn right ahead' with prob = 0.00 
-     - 'Keep left' with prob = 0.00 
-* Top 5 Labels for image 'Ahead only':
-     - 'Ahead only' with prob = 1.00 
-     - 'Go straight or right' with prob = 0.00 
-     - 'Turn left ahead' with prob = 0.00 
-     - 'Turn right ahead' with prob = 0.00 
-     - 'Speed limit (60km/h)' with prob = 0.00 
-* Top 5 Labels for image 'No vehicles':
-     - 'No vehicles' with prob = 0.94 
-     - 'Priority road' with prob = 0.06 
-     - 'Yield' with prob = 0.00 
-     - 'Ahead only' with prob = 0.00 
-     - 'Keep right' with prob = 0.00 
-* Top 5 Labels for image 'Go straight or left':
-     - 'Go straight or left' with prob = 1.00 
-     - 'Roundabout mandatory' with prob = 0.00 
-     - 'Keep right' with prob = 0.00 
-     - 'Turn left ahead' with prob = 0.00 
-     - 'Ahead only' with prob = 0.00 
-* Top 5 Labels for image 'General caution':
-     - 'General caution' with prob = 1.00 
-     - 'End of no passing by vehicles over 3.5 metric tons' with prob = 0.00 
-     - 'No passing for vehicles over 3.5 metric tons' with prob = 0.00 
-     - 'No entry' with prob = 0.00 
-     - 'Vehicles over 3.5 metric tons prohibited' with prob = 0.00
+* Top 5 Labels for image `Speed limit (30km/h)`:
+     - `Speed limit (30km/h)` with prob = 1.00 
+     - `Speed limit (50km/h)` with prob = 0.00 
+     - `Speed limit (70km/h)` with prob = 0.00 
+     - `Speed limit (20km/h)` with prob = 0.00 
+     - `Speed limit (80km/h)` with prob = 0.00 
+* Top 5 Labels for image `Roundabout mandatory`:
+     - `Roundabout mandatory` with prob = 0.95 
+     - `No entry` with prob = 0.04 
+     - `Keep right` with prob = 0.00 
+     - `Turn right ahead` with prob = 0.00 
+     - `Keep left` with prob = 0.00 
+* Top 5 Labels for image `Ahead only`:
+     - `Ahead only` with prob = 1.00 
+     - `Go straight or right` with prob = 0.00 
+     - `Turn left ahead` with prob = 0.00 
+     - `Turn right ahead` with prob = 0.00 
+     - `Speed limit (60km/h)` with prob = 0.00 
+* Top 5 Labels for image `No vehicles`:
+     - `No vehicles' with prob = 0.94 
+     - `Priority road` with prob = 0.06 
+     - `Yield` with prob = 0.00 
+     - `Ahead only` with prob = 0.00 
+     - `Keep right` with prob = 0.00 
+* Top 5 Labels for image `Go straight or left`:
+     - `Go straight or left` with prob = 1.00 
+     - `Roundabout mandatory` with prob = 0.00 
+     - `Keep right` with prob = 0.00 
+     - `Turn left ahead` with prob = 0.00 
+     - `Ahead only` with prob = 0.00 
+* Top 5 Labels for image `General caution`:
+     - `General caution` with prob = 1.00 
+     - `End of no passing by vehicles over 3.5 metric tons` with prob = 0.00 
+     - `No passing for vehicles over 3.5 metric tons` with prob = 0.00 
+     - `No entry` with prob = 0.00 
+     - `Vehicles over 3.5 metric tons prohibited` with prob = 0.00
 
 It can be observed from the above data that model is very confident with each of the outcomes. The reason might be that the model has received almost similar kinds of inputs on which it was trained. No images was too much rotated, neither any of them cobntains any bad lighting condition or any additional objects other than traffic signs. But that aside, it cxan be concluded that if the model recives almost similar images on which it was trained it will give very good results on totally unseen images.
 
