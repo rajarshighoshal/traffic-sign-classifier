@@ -106,16 +106,29 @@ My final model consisted of the following layers:
 | Softmax               |                                               |
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Model Hyperparameters
 
-To train the model, I used an ....
+To train the model, I have choosed the folowing hyperparameters:
+* Learning Rate - `0.0001`
+* Batch Size - `32`
+* No. of Epochs - `300`
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Model Building Approach
+
+* At first I have used classic `LeNet` architecture. 
+* The initial LeNet model was overfitting or underfitting, even after tuning the hyperparameters in various ways I was unable to get better results.
+*  As a result I have decided to modify it.
+* I have changed the LeNet's 5x5 kernel size for convolution layers to 3x3 kernal size. 
+* I have also added another convolution layer followed by a maxpooling layer to increase the depth of the feature map. 
+* I have also added one additional hidden layer in the fully connected layers to decrease the neuron sizes more gradually.
+* Apart from that in between each fully connected layer I have decided to add a dropout layer with a dropout probability of 50% to stop overfitting.
+* As the optimiser I have choosed Adam optimiser.
+* After much testing I have decided to keep learning rate `0.0001` and decraes the batch size to `32`; also I have choosed the epoch as `300` as the model tarining and valkidation accuracy was continuing to increase for any number below that.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of `1.00`
+* validation set accuracy of `0.96`
+* test set accuracy of `0.95`
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
