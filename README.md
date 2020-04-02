@@ -7,7 +7,7 @@
 [image1]: ./writeup_imgs/graph.png "Visualization"
 [image2]: ./writeup_imgs/y_channel.png "Y channel extraction"
 [image3]: ./writeup_imgs/augmentation.png "Augmentation"
-[image4]: ./external_imgs/tr1.png "Traffic Sign 1"
+[image4]: ./writeup_imgs/internet_imgs.png "External Images"
 [image5]: ./external_imgs/tr2.png "Traffic Sign 2"
 [image6]: ./external_imgs/tr3.png "Traffic Sign 3"
 [image7]: ./external_imgs/tr4.png "Traffic Sign 4"
@@ -136,8 +136,7 @@ If a well known architecture was chosen:
 
 Here are six German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8] ![alt text][image9]
+![alt text][image4] 
 
 The first image might be difficult to classify because ...
 
